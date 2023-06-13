@@ -744,6 +744,7 @@ MonoBehaviour:
   - {fileID: 1658053538}
   - {fileID: 1288904864}
   graphic: {fileID: 0}
+  colorType: 1
 --- !u!114 &44885365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,6 +1237,7 @@ MonoBehaviour:
   - {fileID: 2062041369}
   - {fileID: 48540092}
   graphic: {fileID: 0}
+  colorType: 0
 --- !u!114 &112614589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1504,6 +1506,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 532e48b66beade9429d14ba7273befd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colourChangeHandlers:
+  - {fileID: 44885364}
+  - {fileID: 1944660720}
+  - {fileID: 112614588}
 --- !u!1 &147329747
 GameObject:
   m_ObjectHideFlags: 0
@@ -4840,6 +4846,7 @@ MonoBehaviour:
   - {fileID: 2090856551027602341}
   - {fileID: 614362272032890805}
   graphic: {fileID: 0}
+  colorType: 1
 --- !u!114 &405479184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18792,32 +18799,38 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a2939c33486d6c84d9eccb05e84612f5, type: 3}
     volume: 1
     pitch: 1
+    loop: 0
     source: {fileID: 0}
   - name: WaitingMusic
     clip: {fileID: 8300000, guid: aa794d3ebf1b4b046babe1c37cf1e183, type: 3}
     volume: 1
     pitch: 1
+    loop: 0
     source: {fileID: 0}
   - name: DefeatMusic
     clip: {fileID: 8300000, guid: 482b8d4da59c2e04bb2c985ccaf85aea, type: 3}
     volume: 1
     pitch: 1
+    loop: 0
     source: {fileID: 0}
   - name: VictoryMusic
     clip: {fileID: 8300000, guid: db1c5bddfadb0e644a381054e23a5065, type: 3}
     volume: 0.5
     pitch: 1
+    loop: 0
     source: {fileID: 0}
   - name: BackgroundMusic
     clip: {fileID: 8300000, guid: 2848badd12414834bb229d6344493692, type: 3}
     volume: 0.8
     pitch: 1
+    loop: 1
     source: {fileID: 0}
   mainStart:
     name: 
     clip: {fileID: 0}
     volume: 0
     pitch: 0
+    loop: 0
     source: {fileID: 0}
 --- !u!1001 &1598188374
 PrefabInstance:
@@ -23623,6 +23636,7 @@ MonoBehaviour:
   - {fileID: 336098609658916636}
   - {fileID: 6273158879074625321}
   graphic: {fileID: 0}
+  colorType: 0
 --- !u!114 &1937503234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23795,6 +23809,7 @@ MonoBehaviour:
   - {fileID: 4561980782400853644}
   - {fileID: 3950395918323170297}
   graphic: {fileID: 0}
+  colorType: 0
 --- !u!114 &1939407147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24014,6 +24029,7 @@ MonoBehaviour:
   - {fileID: 315939220}
   - {fileID: 374811142}
   graphic: {fileID: 0}
+  colorType: 0
 --- !u!114 &1944660721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27203,6 +27219,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 532e48b66beade9429d14ba7273befd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colourChangeHandlers:
+  - {fileID: 405479183}
+  - {fileID: 1939407146}
+  - {fileID: 1937503233}
 --- !u!137 &7767819857024705346 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2610554191590386736, guid: 9df00f5b26ffc0048a1e507da1cecf7e, type: 3}

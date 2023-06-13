@@ -6,6 +6,8 @@ namespace GPG212_02
 {
     public class CharacterManager : MonoBehaviour
     {
+        [SerializeField] private ColourChangeHandler[] colourChangeHandlers;
+
         public void RandomiseBodyItems()
         {
             foreach (var item in GetComponentsInChildren<BodyItemSelecter>())
@@ -21,6 +23,11 @@ namespace GPG212_02
             {
                 item.index = item.startingIndex - 1;
                 item.EquipNextBodyItem();
+            }
+
+            foreach (var item in colourChangeHandlers)
+            {
+                item.ResetCharacterColors();
             }
         }
     }
