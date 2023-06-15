@@ -29,6 +29,8 @@ namespace GPG212_02
                 if (colorType == ColorType.HAIR) item.material.color = defaultHairColor;
                 else item.material.color = defaultSkinColor;
             }
+
+            graphic.color = items[0].material.color;
         }
     }
 }

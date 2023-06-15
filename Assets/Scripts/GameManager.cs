@@ -15,6 +15,9 @@ namespace GPG212_02
         [SerializeField] private GameObject victoryPanel;
         [SerializeField] private GameObject defeatPanel;
 
+        private bool _victoryDebug = false;
+        private bool _defeatDebug = false;
+
         private void Start()
         {
             AudioManager.PlayAudio("BackgroundMusic");
@@ -48,19 +51,41 @@ namespace GPG212_02
 
         private void Matched()
         {
-            if (Random.Range(1, 6) == 1)
+            //DEBUG KEY PRESS
+            if (_victoryDebug || _defeatDebug)
             {
-                // MATCHED
-                AudioManager.StopAudio();
-                AudioManager.PlayAudio("VictoryMusic");
-                victoryPanel.SetActive(true);
+                if (_victoryDebug)
+                {
+                    // MATCHED
+                    AudioManager.StopAudio();
+                    AudioManager.PlayAudio("VictoryMusic");
+                    victoryPanel.SetActive(true);
+                }
+                else
+                {
+                    // NOT MATCHED
+                    AudioManager.StopAudio();
+                    AudioManager.PlayAudio("DefeatMusic");
+                    defeatPanel.SetActive(true);
+                }
             }
+            //REGULAR MATCH DETERMINATION
             else
             {
-                // NOT MATCHED
-                AudioManager.StopAudio();
-                AudioManager.PlayAudio("DefeatMusic");
-                defeatPanel.SetActive(true);
+                if (Random.Range(1, 6) == 1)
+                {
+                    // MATCHED
+                    AudioManager.StopAudio();
+                    AudioManager.PlayAudio("VictoryMusic");
+                    victoryPanel.SetActive(true);
+                }
+                else
+                {
+                    // NOT MATCHED
+                    AudioManager.StopAudio();
+                    AudioManager.PlayAudio("DefeatMusic");
+                    defeatPanel.SetActive(true);
+                }
             }
         }
 
@@ -74,6 +99,14 @@ namespace GPG212_02
         public void ChangeCurrentColourHandler(ColourChangeHandler handler)
         {
             currentHandler = handler;
+        }
+
+
+        // DEBUG KEY CHECKS
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.F11)) { _defeatDebug = true; Debug.Log("Victory guaranteed."); }
+            else if (Input.GetKeyDown(KeyCode.F12)) { _victoryDebug = true; Debug.Log("Defeat guaranteed."); }
         }
     }
 }
